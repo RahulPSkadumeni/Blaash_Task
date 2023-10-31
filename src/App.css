@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+}
+
+.main {
+  padding: 20px;
+}
+
+.Video {
+  width: calc(25% - 20px); /* Adjust width as needed with margins */
+  margin: 10px;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .Video {
+    width: calc(33.33% - 20px); /* Three columns on smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .flex-container {
+    flex-direction: column;
+    padding-top: 5px;
+  }
+
+  .Modal {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(227, 220, 220);
+  }
+}
+
+.slider {
+  position: relative;
+  height: 100vh;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+
+  flex-shrink: 0;
+  margin: 10px;
+  border-radius: 20px;
+  /* background: #635454; */
+  box-shadow: 0px 10.83762px 173.40192px 0px rgba(0, 0, 0, 0.95);
 }
 
-.App-link {
-  color: #61dafb;
+.image {
+  width: 1000px;
+  height: 600px;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
+.Modal {
+  position: fixed; /* Use 'fixed' instead of 'absolute' for full-screen positioning */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(
+    204,
+    201,
+    201,
+    0.9
+  ); /* Adjust background color and opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 900;
 }

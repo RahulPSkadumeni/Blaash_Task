@@ -1,0 +1,76 @@
+.reels-video {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 241px;
+  height: 500px;
+  flex-shrink: 0;
+  margin: 10px;
+
+  /* background: #635454; */
+}
+
+.ProductCategory {
+  background: #3b3b39;
+  width: 100%;
+  padding: 1.5rem;
+  color: white;
+  border-radius: 0px 0px 20px 20px;
+  order: 2; /* Change the order to 1 to move it to the top */
+}
+
+.BuyButton {
+  position: absolute;
+  background: #3e52d2;
+  bottom: 5%;
+  width: 80%;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 10%;
+  padding: 10px;
+  color: white;
+  border-radius: 20px 20px 20px 20px;
+  order: 2;
+}
+.video {
+  width: 241px;
+  height: 500px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background: #635454; */
+
+  order: 1; /* Change the order to 2 to move it to the bottom */
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.playButton {
+  
+  color: antiquewhite;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.button {
+  /* width: 40px;
+  height: 40px;
+  flex-shrink: 0; */
+  /* background: rgb(147, 142, 142);
+  border-radius: 50%; */
+  align-items: center;
+}
